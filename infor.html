@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wedang Runtah</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin:0; background:#f2f6ff; }
+    header { background:#2a3aff; color:white; padding:20px; text-align:center; }
+    nav { display:flex; justify-content:center; background:#1c259c; }
+    nav a {
+      color:white; padding:14px 20px; text-decoration:none; cursor:pointer;
+      transition: background 0.3s;
+    }
+    nav a:hover { background:#3945ff; }
+    section { padding:30px; max-width:900px; margin:auto; position:relative; }
+    .content {
+      background:white; padding:25px; border-radius:8px;
+      box-shadow:0 0 10px rgba(0,0,0,0.1); 
+      position:absolute; top:0; left:0; width:100%;
+      opacity:0; visibility:hidden;
+      transition: opacity 0.6s ease-in-out, visibility 0.6s;
+    }
+    .active {
+      opacity:1; visibility:visible; position:relative;
+    }
+    h2 { color:#1c259c; }
+    img { border-radius:8px; margin-top:15px; max-width:100%; }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <h1>Wedang Runtah</h1>
+    <p>Hangat • Sehat • Tradisional</p>
+  </header>
+
+  <!-- MENU TAB -->
+  <nav>
+    <a onclick="showPage('home')">Home</a>
+    <a onclick="showPage('tentang')">Tentang</a>
+    <a onclick="showPage('resep')">Resep</a>
+  </nav>
+
+  <section>
+    <!-- HALAMAN HOME -->
+    <div id="home" class="content active">
+      <h2>Selamat Datang</h2>
+      <p>
+        Pernahkah Anda merasakan hangatnya minuman tradisional yang penuh rempah dan kaya manfaat? 
+        Wedang Runtah bukan sekadar minuman, tetapi warisan budaya khas Tegal yang mampu menghangatkan tubuh sekaligus menyehatkan.
+      </p>
+      <img src="foto1.png" alt="Wedang Runtah">
+    </div>
+
+    <!-- HALAMAN TENTANG -->
+    <div id="tentang" class="content">
+      <h2>Apa Itu Wedang Runtah?</h2>
+      <p>
+        Wedang Runtah adalah minuman tradisional khas dari Tegal, Jawa Tengah. 
+        Kata <b>wedang</b> berarti minuman hangat, sedangkan <b>runtah</b> dalam bahasa Jawa berarti sisa-sisa. 
+        Nama ini muncul karena wedang runtah dibuat dari berbagai rempah-rempah dan bahan sisa dapur yang masih bermanfaat, 
+        seperti jahe, serai, kayu manis, kapulaga, cengkeh, pandan, dan gula.
+      </p>
+      <h3>Ciri Khas:</h3>
+      <ul>
+        <li>Rasanya hangat, manis, dan aromatik.</li>
+        <li>Disajikan panas, cocok untuk menghangatkan tubuh.</li>
+        <li>Dulu sering diminum masyarakat pedesaan Tegal saat malam atau cuaca dingin.</li>
+        <li>Rempah-rempahnya dipercaya bisa melancarkan peredaran darah, menghangatkan badan, dan meningkatkan daya tahan tubuh.</li>
+      </ul>
+      <img src="foto2.png" alt="Rempah Wedang Runtah">
+    </div>
+
+    <!-- HALAMAN RESEP -->
+    <div id="resep" class="content">
+      <h2>Resep Wedang Runtah</h2>
+      <h3>Bahan-bahan:</h3>
+      <ul>
+        <li>2 ruas jahe (geprek atau dibakar sebentar)</li>
+        <li>2 batang serai (memarkan)</li>
+        <li>3 lembar daun pandan</li>
+        <li>2 butir kapulaga</li>
+        <li>3 butir cengkeh</li>
+        <li>1 batang kayu manis</li>
+        <li>100 gram gula merah (serut)</li>
+        <li>2 sdm gula pasir (opsional, sesuai selera)</li>
+        <li>700 ml air</li>
+      </ul>
+      <h3>Cara Membuat:</h3>
+      <ol>
+        <li>Rebus air hingga mendidih.</li>
+        <li>Masukkan jahe, serai, daun pandan, kapulaga, cengkeh, dan kayu manis.</li>
+        <li>Biarkan mendidih 10–15 menit sampai harum.</li>
+        <li>Tambahkan gula merah dan gula pasir, aduk hingga larut.</li>
+        <li>Angkat, saring bila perlu, lalu sajikan hangat.</li>
+      </ol>
+      <p><b>Tips:</b> Bisa ditambah susu, jeruk nipis, atau madu sesuai selera biar lebih segar.</p>
+      <img src="https://drive.google.com/uc?export=view&id=1DNkiEpTTbxXSMXGRnqlFeQjkvrtFV69R" alt="Wedang Runtah Hangat">
+    </div>
+  </section>
+
+  <!-- SCRIPT UNTUK TAB -->
+  <script>
+    function showPage(pageId) {
+      var pages = document.querySelectorAll('.content');
+      pages.forEach(p => p.classList.remove('active'));
+      document.getElementById(pageId).classList.add('active');
+    }
+  </script>
+
+</body>
+</html>
